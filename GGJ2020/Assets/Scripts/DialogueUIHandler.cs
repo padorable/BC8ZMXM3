@@ -25,9 +25,8 @@ public class DialogueUIHandler : MonoBehaviour
     public TweeningUIObject ImageLeft;
     public TweeningUIObject ImageRight;
     [HideInInspector] public bool IsTyping = false;
+    [HideInInspector] public bool CanTypeAgain = true;
     private Coroutine TypingCoroutine;
-
-    [HideInInspector] public UnityEvent onEndDialogue = new UnityEvent();
 
     public void ShowUIObject(TweeningUIObject obj)
     {
@@ -104,6 +103,7 @@ public class DialogueUIHandler : MonoBehaviour
 
     IEnumerator TypeDialogue(string dialogue)
     {
+        CanTypeAgain = false;
         int current = 0;
         string color = "<color=#FFFFFF00>";
         while (current < dialogue.Length && IsTyping)
@@ -117,7 +117,10 @@ public class DialogueUIHandler : MonoBehaviour
             yield return null;
         }
         DialogueText.text = dialogue;
-        onEndDialogue.Invoke();
+
+        yield return new WaitForSeconds(.5f);
+        CanTypeAgain = true;
+        IsTyping = false;
     }
 
     // Call to skip tying

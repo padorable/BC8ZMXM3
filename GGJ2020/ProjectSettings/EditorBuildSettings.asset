@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PersistentScene.unity
+    guid: 5387fd600d43a9348aeb6cf0e8b1c7ef
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 6d9592b3b28a4c843bf774254c53b844
+  - enabled: 1
+    path: Assets/Scenes/RandomGenerator.unity
+    guid: b4b6f1275076a1a4fa6f6d473c58aae3
+  - enabled: 1
+    path: Assets/Scenes/WatchScene.unity
+    guid: f1f09a457af1c5443a88dab169e8b5a6
+  - enabled: 1
     path: Assets/Scenes/DialogueSystem.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ReturnToDungeon.unity
+    guid: 51d1c4b7066123b4e96048ef15314f8a
   m_configObjects: {}
