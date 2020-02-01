@@ -8,23 +8,27 @@ public class MapGenerator : MonoBehaviour
     public RuleTile tile;
     [SerializeField] private Vector2Int GridMinSize;
     [SerializeField] private Vector2Int GridMaxSize;
+    [SerializeField] private int mod;
     [Space(10)]
     [Header("For Debugging")]
     public Vector2Int GridSize;
-    Tilemap tilemap;
+    public Tilemap tilemap;
+    public Tilemap itemMap;
     public Sprite testSprite;
+    public Tile itemTile;
+    public Tile timeTile;
     
     public Vector3Int LowerLeft { get { return new Vector3Int(-GridSize.x / 2, -GridSize.y / 2 + 1, 0); } }
 
     // Start is called before the first frame update
     void Start()
     {
-        tilemap = FindObjectOfType<Tilemap>();
+        //tilemap = FindObjectOfType<Tilemap>();
     }
 
     public void GenerateMap()
     {
-        GridSize = new Vector2Int(Random.Range(GridMinSize.x, GridMaxSize.x), Random.Range(GridMinSize.y, GridMaxSize.y));
+        GridSize = new Vector2Int(Random.Range(GridMinSize.x, GridMaxSize.x) + mod, Random.Range(GridMinSize.y, GridMaxSize.y) + mod);
         if (GridSize.x % 2 == 1) GridSize.x += 1;
         if (GridSize.y % 2 == 1) GridSize.y += 1;
 
@@ -50,6 +54,15 @@ public class MapGenerator : MonoBehaviour
             count++;
         }
 
+        for (int i = 0; i < 2 + Random.Range(0, 2); i++)
+        {
+            itemMap.SetTile(LowerLeft + new Vector3Int(Random.Range(0, GridSize.x), Random.Range(0, GridSize.y - 1), 0), itemTile);
+        }
+        for (int i = 0; i < 1 + Random.Range(0, 2); i++)
+        {
+            itemMap.SetTile(LowerLeft + new Vector3Int(Random.Range(0, GridSize.x), Random.Range(0, GridSize.y - 1), 0), timeTile);
+        }
+
         Tile emptyTile = new Tile
         {
             sprite = null,
@@ -69,6 +82,8 @@ public class MapGenerator : MonoBehaviour
 
     public void ClearMap()
     {
+        mod += 2;
         tilemap.ClearAllTiles();
+        itemMap.ClearAllTiles();
     }
 }

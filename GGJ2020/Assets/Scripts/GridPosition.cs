@@ -70,7 +70,7 @@ public class GridPosition : MonoBehaviour
     private void Update()
     {
         Vector3 to = grid.GetCellCenterWorld(currentPos);
-        to.z = -1;
+        to.z = -2;
         this.transform.position = Vector3.Lerp(this.transform.position, to, Time.deltaTime * 10);
     }
 }
