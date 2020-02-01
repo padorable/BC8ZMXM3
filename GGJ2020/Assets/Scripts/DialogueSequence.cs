@@ -12,6 +12,7 @@ public struct Dialogue
     public Sprite BG;
     public string Name;
     public string DialogueText;
+    public Sprite Background;
 }
 
 public class DialogueSequence : MonoBehaviour

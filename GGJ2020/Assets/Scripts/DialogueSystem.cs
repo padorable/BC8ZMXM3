@@ -39,19 +39,18 @@ public class DialogueSystem : MonoBehaviour
         {
             Debug.Log("Next");
             NextLine();
+            UIHandler.CanTypeAgain = false;
         }
     }
 
     public void StartDialogue(int index)
     {
-        StartDialogue(index, false);
+        StartDialogue(index, true);
     }
     // Handles the sequence of starting the dialogue
     public void StartDialogue(int index, bool willRemoveImage)
     {
         WillRemoveImagesOnEnd = willRemoveImage;
-
-        StartedDialogue = true;
         CurrentSequence = Sequences[index];
         CurrentSequence.ResetDialogue();
 
@@ -66,12 +65,12 @@ public class DialogueSystem : MonoBehaviour
             UIHandler.SetImage(false, CurrentSequence.CurrentDialogue.RightImage, CurrentSequence.CurrentDialogue.FlipRight);
             UIHandler.ShowUIObject(UIHandler.ImageRight);
         }
-
+        UIHandler.UpdateBackGround(CurrentSequence.CurrentDialogue.Background);
         Sequence seq = DOTween.Sequence();
         seq.AppendInterval(1.0f);
         seq.AppendCallback(() => UIHandler.ShowUIObject(UIHandler.DialogeBox));
         seq.AppendInterval(.5f);
-        seq.AppendCallback(() => UIHandler.StartTyping(CurrentSequence.CurrentDialogue.Name, CurrentSequence.CurrentDialogue.DialogueText));
+        seq.AppendCallback(() => { UIHandler.StartTyping(CurrentSequence.CurrentDialogue.Name, CurrentSequence.CurrentDialogue.DialogueText); StartedDialogue = true; ; });
         seq.PlayForward();
     }
 
@@ -90,6 +89,7 @@ public class DialogueSystem : MonoBehaviour
             UIHandler.HideUIObject(UIHandler.DialogeBox);
             UIHandler.ClearDialogue();
             StartedDialogue = false;
+            UIHandler.UpdateBackGround(null);
             OnDialogueEnd.Invoke();
             // End of Dialogue
         }

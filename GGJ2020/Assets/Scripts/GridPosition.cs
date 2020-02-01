@@ -44,7 +44,7 @@ public class GridPosition : MonoBehaviour
                 {
                     Vector3Int direction = new Vector3Int(Mathf.CeilToInt(x), Mathf.CeilToInt(y), 0);
                     Vector3Int pos = currentPos + direction;
-                    LookingAtPos = currentPos + direction;
+                    LookingAtPos = pos + direction;
 
                     Vector2 nextPos = grid.GetCellCenterWorld(pos);
 
@@ -72,9 +72,13 @@ public class GridPosition : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            this.GetComponent<DiggingHandler>().Dig(LookingAtPos);
+        }
+
         Vector3 to = grid.GetCellCenterWorld(currentPos);
         to.z = -1;
-
         this.transform.position += (to - this.transform.position).normalized * Time.deltaTime*5.5f;
     }
 }

@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cover: {fileID: 1667392941}
+  FadeToColor: {r: 0, g: 0, b: 0, a: 0}
   WillStartFromBlack: 1
 --- !u!4 &1640922160
 Transform:
