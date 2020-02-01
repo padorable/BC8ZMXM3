@@ -12,6 +12,7 @@ public struct Dialogue
     public Sprite BG;
     public string Name;
     public string DialogueText;
+    public Sprite Background;
 }
 
 public class DialogueSequence : MonoBehaviour
@@ -28,4 +29,8 @@ public class DialogueSequence : MonoBehaviour
     }
 
     public Dialogue CurrentDialogue { get { return DialogueList[currentIndex]; } }
+    public void ResetDialogue()
+    {
+        currentIndex = 0;
+    }
 }

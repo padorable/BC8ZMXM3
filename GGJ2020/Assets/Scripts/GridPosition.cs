@@ -36,7 +36,7 @@ public class GridPosition : MonoBehaviour
                 {
                     elapsedTime += Time.deltaTime;
                     LookingAtPos = currentPos + new Vector3Int(Mathf.CeilToInt(x), Mathf.CeilToInt(y), 0);
-                    if (elapsedTime >= .05f)
+                    if (elapsedTime >= .12f)
                         isLooking = false;
                     yield return null;
                 }
@@ -44,7 +44,7 @@ public class GridPosition : MonoBehaviour
                 {
                     Vector3Int direction = new Vector3Int(Mathf.CeilToInt(x), Mathf.CeilToInt(y), 0);
                     Vector3Int pos = currentPos + direction;
-                    LookingAtPos = currentPos + direction;
+                    LookingAtPos = pos + direction;
 
                     Vector2 nextPos = grid.GetCellCenterWorld(pos);
 
@@ -54,8 +54,11 @@ public class GridPosition : MonoBehaviour
                     {
                         currentPos = pos;
                     }
+                    Vector3 to = grid.GetCellCenterWorld(currentPos);
+                    to.z = -1;
 
-                    yield return new WaitForSeconds(.25f);
+                    yield return new WaitUntil(()=>(((Vector2)(this.transform.position - to)).magnitude <= .05f));
+                    this.transform.position = to;
                 }
             }
             else
@@ -69,8 +72,13 @@ public class GridPosition : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            this.GetComponent<DiggingHandler>().Dig(LookingAtPos);
+        }
+
         Vector3 to = grid.GetCellCenterWorld(currentPos);
-        to.z = -2;
-        this.transform.position = Vector3.Lerp(this.transform.position, to, Time.deltaTime * 10);
+        to.z = -1;
+        this.transform.position += (to - this.transform.position).normalized * Time.deltaTime*5.5f;
     }
 }

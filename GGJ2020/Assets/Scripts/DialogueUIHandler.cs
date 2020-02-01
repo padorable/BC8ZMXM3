@@ -24,10 +24,12 @@ public class DialogueUIHandler : MonoBehaviour
 
     public TweeningUIObject ImageLeft;
     public TweeningUIObject ImageRight;
+    [Space(10)]
+    public Image BG1;
+    public Image BG2;
     [HideInInspector] public bool IsTyping = false;
+    [HideInInspector] public bool CanTypeAgain = true;
     private Coroutine TypingCoroutine;
-
-    [HideInInspector] public UnityEvent onEndDialogue = new UnityEvent();
 
     public void ShowUIObject(TweeningUIObject obj)
     {
@@ -92,6 +94,27 @@ public class DialogueUIHandler : MonoBehaviour
         }
     }
 
+    public void UpdateBackGround(Sprite ToChange)
+    {
+        if(ToChange == null)
+        {
+            DOTween.To(() => BG1.color, x => BG1.color = x, Color.clear, 1.0f);
+            DOTween.To(() => BG2.color, x => BG2.color = x, Color.clear, 1.0f);
+        }
+        else if (BG1.overrideSprite == null)
+        {
+            BG1.overrideSprite = ToChange;
+            DOTween.To(() => BG1.color, x => BG1.color = x, Color.white, 1.0f);
+            DOTween.To(() => BG2.color, x => BG2.color = x, Color.clear, 1.0f);
+        }
+        else
+        {
+            BG2.overrideSprite = ToChange;
+            DOTween.To(() => BG1.color, x => BG1.color = x, Color.clear, 1.0f);
+            DOTween.To(() => BG2.color, x => BG2.color = x, Color.white, 1.0f);
+        }
+    }
+
     // Call to start typing
     public void StartTyping(string name, string dialogue)
     {
@@ -104,6 +127,7 @@ public class DialogueUIHandler : MonoBehaviour
 
     IEnumerator TypeDialogue(string dialogue)
     {
+        CanTypeAgain = false;
         int current = 0;
         string color = "<color=#FFFFFF00>";
         while (current < dialogue.Length && IsTyping)
@@ -117,7 +141,10 @@ public class DialogueUIHandler : MonoBehaviour
             yield return null;
         }
         DialogueText.text = dialogue;
-        onEndDialogue.Invoke();
+
+        yield return new WaitForSeconds(.5f);
+        CanTypeAgain = true;
+        IsTyping = false;
     }
 
     // Call to skip tying
