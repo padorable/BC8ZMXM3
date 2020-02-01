@@ -14,11 +14,13 @@ public class RandomObstacleGenerator : MonoBehaviour
 
     List<GameObject> SpawnedObjects = new List<GameObject>();
 
+    RandomItemGenerator itemGen;
     MapGenerator mapGen;
     private void Start()
     {
         grid = transform.parent.GetComponent<Grid>();
         mapGen = FindObjectOfType<MapGenerator>();
+        itemGen = FindObjectOfType<RandomItemGenerator>();
 
     }
 
@@ -30,6 +32,7 @@ public class RandomObstacleGenerator : MonoBehaviour
             mapGen.GenerateMap();
             ClearObstacles();
             RandomGenerate();
+            itemGen.GenerateItems();
         }
     }
     public void RandomGenerate()
