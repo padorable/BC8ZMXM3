@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+// Was not used because there aren't obstacles at all lmao
+
 public class RandomObstacleGenerator : MonoBehaviour
 {
     Vector3Int size;
@@ -15,39 +17,28 @@ public class RandomObstacleGenerator : MonoBehaviour
     List<GameObject> SpawnedObjects = new List<GameObject>();
 
     RandomItemGenerator itemGen;
-    MapGenerator mapGen;
+
+    public List<Vector3Int> obstaclePoints = new List<Vector3Int>();
     private void Start()
     {
         grid = transform.parent.GetComponent<Grid>();
-        mapGen = FindObjectOfType<MapGenerator>();
         itemGen = FindObjectOfType<RandomItemGenerator>();
 
     }
 
-    private void Update()
+    public void RandomGenerate(MapGenerator gen)
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            mapGen.ClearMap();
-            mapGen.GenerateMap();
-            ClearObstacles();
-            RandomGenerate();
-            itemGen.GenerateItems();
-        }
-    }
-    public void RandomGenerate()
-    {
-        List<Vector3Int> points = new List<Vector3Int>();
+        obstaclePoints.Clear();
 
         for(int i = 0; i < amountOfObstacles; i++)
         {
             Vector3Int randomPoint = Vector3Int.zero;
             do
             {
-                randomPoint = mapGen.LowerLeft + new Vector3Int(Random.Range(0, mapGen.GridSize.x), Random.Range(0, mapGen.GridSize.y - 1), 0);
-            } while (points.Contains(randomPoint));
+                randomPoint = gen.LowerLeft + new Vector3Int(Random.Range(0, gen.ActualGridSize.x), Random.Range(0, gen.ActualGridSize.y - 1), 0);
+            } while (obstaclePoints.Contains(randomPoint));
 
-            points.Add(randomPoint);
+            obstaclePoints.Add(randomPoint);
             GameObject obj = Instantiate(TestObstacle, grid.GetCellCenterWorld(randomPoint) + new Vector3(0,0,-1), Quaternion.identity, Obstalces);
             SpawnedObjects.Add(obj);
         }
@@ -61,5 +52,6 @@ public class RandomObstacleGenerator : MonoBehaviour
             SpawnedObjects.RemoveAt(i);
         }
         SpawnedObjects.Clear();
+        obstaclePoints.Clear();
     }
 }

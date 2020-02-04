@@ -25,7 +25,7 @@ public class DialogueSystem : MonoBehaviour
 
     private void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.Space))
+        if (!Input.GetMouseButtonDown(0))
             return;
 
         if (!StartedDialogue) return;
@@ -39,7 +39,6 @@ public class DialogueSystem : MonoBehaviour
         {
             Debug.Log("Next");
             NextLine();
-            UIHandler.CanTypeAgain = false;
         }
     }
 
@@ -47,6 +46,7 @@ public class DialogueSystem : MonoBehaviour
     {
         StartDialogue(index, true);
     }
+    
     // Handles the sequence of starting the dialogue
     public void StartDialogue(int index, bool willRemoveImage)
     {
@@ -59,12 +59,23 @@ public class DialogueSystem : MonoBehaviour
             UIHandler.SetImage(true, CurrentSequence.CurrentDialogue.LeftImage, CurrentSequence.CurrentDialogue.FlipLeft);
             UIHandler.ShowUIObject(UIHandler.ImageLeft);
         }
+        else
+        {
+            UIHandler.SetImage(true, null, false);
+            UIHandler.HideUIObject(UIHandler.ImageLeft);
+        }
 
         if (CurrentSequence.CurrentDialogue.RightImage != null)
         {
             UIHandler.SetImage(false, CurrentSequence.CurrentDialogue.RightImage, CurrentSequence.CurrentDialogue.FlipRight);
             UIHandler.ShowUIObject(UIHandler.ImageRight);
         }
+        else
+        {
+            UIHandler.SetImage(false, null, false);
+            UIHandler.HideUIObject(UIHandler.ImageRight);
+        }
+
         UIHandler.UpdateBackGround(CurrentSequence.CurrentDialogue.Background);
         Sequence seq = DOTween.Sequence();
         seq.AppendInterval(1.0f);

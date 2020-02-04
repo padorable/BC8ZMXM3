@@ -30,6 +30,7 @@ public class DialogueUIHandler : MonoBehaviour
     [HideInInspector] public bool IsTyping = false;
     [HideInInspector] public bool CanTypeAgain = true;
     private Coroutine TypingCoroutine;
+    private string currentDialogue = "";
 
     public void ShowUIObject(TweeningUIObject obj)
     {
@@ -118,6 +119,7 @@ public class DialogueUIHandler : MonoBehaviour
     // Call to start typing
     public void StartTyping(string name, string dialogue)
     {
+        currentDialogue = dialogue;
         DialogueName.text = name;
         string color = "<color=#FFFFFF00>";
         DialogueText.text = color + dialogue + "</color>";
@@ -150,6 +152,9 @@ public class DialogueUIHandler : MonoBehaviour
     // Call to skip tying
     public void SkipTyping()
     {
+        StopCoroutine(TypingCoroutine);
+        DialogueText.text = currentDialogue;
+        CanTypeAgain = true;
         IsTyping = false;
     }
 

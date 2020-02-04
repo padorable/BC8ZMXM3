@@ -157,6 +157,7 @@ MonoBehaviour:
     BG: {fileID: 0}
     Name: Usalia
     DialogueText: Where am I pyon.
+    Background: {fileID: 0}
   - LeftImage: {fileID: 21300000, guid: aed93f9b508b58d49a66a95fd98d275e, type: 3}
     FlipLeft: 1
     RightImage: {fileID: 21300000, guid: b82e7216cfe8ebc46b8570c7326eab81, type: 3}
@@ -164,6 +165,7 @@ MonoBehaviour:
     BG: {fileID: 0}
     Name: Rozalin
     DialogueText: I actually have no idea.
+    Background: {fileID: 0}
   - LeftImage: {fileID: 21300000, guid: aed93f9b508b58d49a66a95fd98d275e, type: 3}
     FlipLeft: 1
     RightImage: {fileID: 21300000, guid: b82e7216cfe8ebc46b8570c7326eab81, type: 3}
@@ -171,6 +173,7 @@ MonoBehaviour:
     BG: {fileID: 0}
     Name: Rozalin
     DialogueText: '... What is this weeb doing here?'
+    Background: {fileID: 0}
 --- !u!4 &173718908
 Transform:
   m_ObjectHideFlags: 0
@@ -185,7 +188,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &331280763
+--- !u!1 &265425638
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,80 +196,197 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 331280766}
-  - component: {fileID: 331280765}
-  - component: {fileID: 331280764}
+  - component: {fileID: 265425640}
+  - component: {fileID: 265425639}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: OUTRO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &331280764
-AudioListener:
+--- !u!114 &265425639
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331280763}
+  m_GameObject: {fileID: 265425638}
   m_Enabled: 1
---- !u!20 &331280765
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331280763}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &331280766
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f035faefcaa07524596c66152085a94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueList:
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'Restoring all the items and the souls within have changed me. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: ' I regained memory. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'I was their carrier -- the cloth with which enveloped them as they
+      were entombed. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'Wisdom has been gleaned from the experience. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'Truly, no one is truly broken. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: "Not items, not people\u2026 all it could take is are attentive
+      ears, a firm touch, gentle direction, and sheer presence for one to be renewed."
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'Everything has a meaning.  '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'So does this turn of events. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'In freeing them, I have freed myself of my duty to protect them. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'Their stories are inscribed in me, and I shall carry their legacy
+      forever more. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: Together we will be.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: "For I\u2026"
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: I recall.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: I am Umarekawari. The deity of reincarnation.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: "So shall I descend into the mortal realm with them, unseen, unheard,
+      but gazing\u2026 "
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: ' They will be themselves and not-themselves '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: ' They will be themselves and not-themselves '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: "I am in hopes flowery destinies await them\u2026"
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: The cycle begins anew.
+    Background: {fileID: 0}
+--- !u!4 &265425640
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331280763}
+  m_GameObject: {fileID: 265425638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 214.76282, y: 4.3220553, z: -195.9375}
+  m_LocalPosition: {x: -1.6206858, y: 1.5024629, z: -1.0792203}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &431422723
 GameObject:
@@ -326,12 +446,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4f494679d65a90743a771751d182ca0d, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 74
+    m_MaxSize: 20
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -347,6 +467,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431422723}
   m_CullTransparentMesh: 0
+--- !u!1 &434982133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 434982135}
+  - component: {fileID: 434982134}
+  m_Layer: 0
+  m_Name: SWORD B
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &434982134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434982133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f035faefcaa07524596c66152085a94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueList:
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: You have a deft hand.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: 'Remarkable, commendable... '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: 'I give you my utmost thanks. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: 'Now, I understand that we are here to be renewed. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: 'I would not have known then. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: 'My longing, my frustration, my despair... I will transform them.
+      This hope will propel me to her. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: 'I will do better... I have full certainty I will. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: Ko, I vow to be there for you. Not as Emperor, but as a father.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: 'Oh Korin, in the next life, I will never leave your side.   '
+    Background: {fileID: 0}
+--- !u!4 &434982135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434982133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6206858, y: 1.5024629, z: -1.0792203}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &645017548
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +633,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIHandler: {fileID: 917935642}
   Sequences:
-  - {fileID: 173718907}
+  - {fileID: 1092161477}
+  - {fileID: 1296125145}
+  - {fileID: 434982134}
+  - {fileID: 265425639}
+  - {fileID: 1267880240}
+  - {fileID: 1398145218}
   WillRemoveImagesOnEnd: 1
   OnDialogueEnd:
     m_PersistentCalls:
@@ -494,6 +754,7 @@ RectTransform:
   - {fileID: 1801428813}
   - {fileID: 1015902871}
   - {fileID: 1313414575}
+  - {fileID: 969488431}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -524,16 +785,18 @@ MonoBehaviour:
   DialogueText: {fileID: 431422725}
   ImageLeft:
     Object: {fileID: 1015902871}
-    From: {x: -110, y: 0}
-    To: {x: 110, y: 0}
+    From: {x: -220, y: 0}
+    To: {x: 0, y: 0}
     IsOut: 0
     isFlipped: 0
   ImageRight:
     Object: {fileID: 1313414575}
-    From: {x: 110, y: 0}
-    To: {x: -110, y: 0}
+    From: {x: 250, y: 0}
+    To: {x: 0, y: 0}
     IsOut: 0
     isFlipped: 0
+  BG1: {fileID: 963052629}
+  BG2: {fileID: 969488429}
   IsTyping: 0
   CanTypeAgain: 1
 --- !u!1 &961116504
@@ -594,7 +857,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4f494679d65a90743a771751d182ca0d, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -606,7 +869,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press Space to continue
+  m_Text: Click to continue
 --- !u!222 &961116507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -649,7 +912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &963052629
@@ -690,6 +953,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963052627}
   m_CullTransparentMesh: 0
+--- !u!1 &969488428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 969488431}
+  - component: {fileID: 969488430}
+  - component: {fileID: 969488429}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &969488429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969488428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &969488430
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969488428}
+  m_CullTransparentMesh: 0
+--- !u!224 &969488431
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969488428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 917935641}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1015902870
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,17 +1054,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015902870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 4.9999995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 917935641}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -110, y: 0}
-  m_SizeDelta: {x: 200, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -220, y: 0}
+  m_SizeDelta: {x: 200, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1015902872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +1103,230 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015902870}
   m_CullTransparentMesh: 0
+--- !u!1 &1092161476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092161478}
+  - component: {fileID: 1092161477}
+  m_Layer: 0
+  m_Name: INTRO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1092161477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092161476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f035faefcaa07524596c66152085a94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueList:
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: ???
+    DialogueText: When I was young, I was taught that everything carries a meaning.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: ???
+    DialogueText: 'Each gust of wind upon her hair, each raindrop upon his check,
+      each snowflake delicately upon my feet... '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: ???
+    DialogueText: 'All have meaning.  '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: ???
+    DialogueText: It only follows that this inexplicable event has meaning too. But
+      what, and why?
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: ???
+    DialogueText: I can scarcely recall being called Kawami.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'When I awoke, so to speak, I have been in this ghostly form. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: Ethereal, floating...
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: My steps bear no weight, and my voice does not materialize.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'I am no more a wisp. Why, then, can I touch them? '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: I found purpose.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'It all began when the first of them spoke. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'They were not foreign to me, as we used to live together. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: "We could not perceive at the time \u2014 we were not truly alive
+      \u2014 but we were in each other\u2019s company all the same."
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'For you see, we were items. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'Forlorn, fraught, and forgotten are we. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'As the century passed we gained sentience. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: "That\u2019s not the surprise, truly. "
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: 'The marvel lies in that they each have borne the memories of our
+      respective owners. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: But not me.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: ' To add, I am the only one they can speak to.  '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: ' I must ponder: for what reason? '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 21300000, guid: f1f5ffad9abfa2f4b964a771404a78d5, type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Kawami
+    DialogueText: ' Nonetheless...'
+    Background: {fileID: 0}
+--- !u!4 &1092161478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092161476}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6206858, y: 1.5024629, z: -1.0792203}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1124363996
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +1393,195 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1267880239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1267880241}
+  - component: {fileID: 1267880240}
+  m_Layer: 0
+  m_Name: Re
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1267880240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267880239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f035faefcaa07524596c66152085a94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueList:
+  - LeftImage: {fileID: 0}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: ???
+    DialogueText: You ran out of time!
+    Background: {fileID: 0}
+--- !u!4 &1267880241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267880239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6206858, y: 1.5024629, z: -1.0792203}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1296125144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1296125146}
+  - component: {fileID: 1296125145}
+  m_Layer: 0
+  m_Name: SWORD A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1296125145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296125144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f035faefcaa07524596c66152085a94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueList:
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Sword
+    DialogueText: 'Behold! You are in the presence of the Emperor Saihitei of the
+      Great Empire Konan. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: 'In my life, many an achievement has been wrought and myriad tribulations
+      surmounted. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: 'However, despite all grandeur and glory, I have one regret. '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: "I am but a sword \u2014 I can only cut. "
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: I could not be there when she passed.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: How could I be? I was duty bound to my country, to my men; I had
+      to front the lines.
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: 'If I had known she was ailing... '
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: Repeat yourself -- you can assist in my restoration?
+    Background: {fileID: 0}
+  - LeftImage: {fileID: -4691564709470228431, guid: 716d21421d997c9499102da32599f208,
+      type: 3}
+    FlipLeft: 0
+    RightImage: {fileID: -3753825769889500098, guid: 8dc01a00d3fdac44cab40b21d0dc75d3,
+      type: 3}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: Saihitei
+    DialogueText: If so, I humbly ask for your assistance.
+    Background: {fileID: 0}
+--- !u!4 &1296125146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296125144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6206858, y: 1.5024629, z: -1.0792203}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1313414574
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,17 +1608,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313414574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 4.9999995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 917935641}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: 0}
-  m_SizeDelta: {x: 200, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 280, y: 0}
+  m_SizeDelta: {x: 200, y: 0}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1313414576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,6 +1657,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313414574}
   m_CullTransparentMesh: 0
+--- !u!1 &1398145217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1398145219}
+  - component: {fileID: 1398145218}
+  m_Layer: 0
+  m_Name: Tut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1398145218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398145217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f035faefcaa07524596c66152085a94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueList:
+  - LeftImage: {fileID: 0}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: ???
+    DialogueText: WASD to move, Left-Click to Dig!
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 0}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: ???
+    DialogueText: Dig for switches to go up! And also look for ore!
+    Background: {fileID: 0}
+  - LeftImage: {fileID: 0}
+    FlipLeft: 0
+    RightImage: {fileID: 0}
+    FlipRight: 0
+    BG: {fileID: 0}
+    Name: ???
+    DialogueText: Watch the lantern on your lower right!
+    Background: {fileID: 0}
+--- !u!4 &1398145219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398145217}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6206858, y: 1.5024629, z: -1.0792203}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1801428812
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,7 +1751,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801428812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -74.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 431422724}
@@ -966,7 +1785,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4dccfa3508c7881479d8a6b9301e5992, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce2129e03ad48b049a488eb4bd3867fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1042,13 +1861,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4f494679d65a90743a771751d182ca0d, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 44
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
