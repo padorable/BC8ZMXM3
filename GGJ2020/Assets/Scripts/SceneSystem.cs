@@ -28,8 +28,11 @@ public class SceneSystem : MonoBehaviour
         while (!op.isDone) yield return null;
 
         op = SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
+        //op = SceneManager.LoadSceneAsync("RandomGenerator", LoadSceneMode.Additive);
         while (!op.isDone) yield return null;
+
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainMenu"));
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName("RandomGenerator"));
     }
 
     public void FadeToNextScene(int scene)

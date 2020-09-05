@@ -15,9 +15,12 @@ public class AudioSystem : MonoBehaviour
     public static AudioSystem instance;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(this);
     }
 
     public void PlayMusic(int clip)

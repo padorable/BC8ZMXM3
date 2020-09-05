@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.Events;
 
-public class StepOnTile : UnityEvent<Vector3Int> { }
-
 public class Player : MonoBehaviour
 {
     private Grid grid;
@@ -14,79 +12,25 @@ public class Player : MonoBehaviour
     private Vector3Int direction;
     private bool isLooking = true;
     private bool stopMoving = false;
-    [HideInInspector] public StepOnTile OnStepOnTile = new StepOnTile();
+    private MapGeneratorRevamp mapGen;
     //public bool debug = false;
 
+    float elapsedTime = 0;
     private void Awake()
     {
         grid = FindObjectOfType<Grid>();
+        mapGen = FindObjectOfType<MapGeneratorRevamp>();
+
         currentPos = grid.WorldToCell(this.transform.position);
         this.transform.position = grid.GetCellCenterWorld(currentPos);
-        StartCoroutine(ControlMovement());
         isLooking = false;
         stopMoving = false;
     }
 
-    IEnumerator ControlMovement()
-    {
-        float elapsedTime = 0;
-        while(true)
-        {
-            float y = Input.GetAxisRaw("Vertical");
-            float x = Input.GetAxisRaw("Horizontal");
-
-            if ((x != 0 || y != 0) && !stopMoving)
-            {
-                if (x != 0 && y != 0) y = 0;
-
-                direction = new Vector3Int(Mathf.CeilToInt(x), Mathf.CeilToInt(y),0);
-                
-                // Player has a delay before actually moving
-                if (isLooking)
-                {
-                    elapsedTime += Time.deltaTime;
-                    lookingAtPos = currentPos + new Vector3Int(Mathf.CeilToInt(x), Mathf.CeilToInt(y), 0);
-                    // After .13f seconds of holding the movement button, player will start moving
-                    if (elapsedTime >= .13f)
-                        isLooking = false;
-                    yield return null;
-                }
-                else
-                {
-                    Vector3Int pos = currentPos + direction;
-                    // Used to check on the next block
-                    lookingAtPos = pos + direction;
-
-                    Vector2 nextPos = grid.GetCellCenterWorld(pos);
-
-                    // Used to check if there are any colliders on the next block
-                    Collider2D[] col = Physics2D.OverlapBoxAll(nextPos, new Vector2(.1f, .1f), 0);
-                    if (col.Length == 0)
-                    {
-                        currentPos = pos;
-                    }
-
-                    //debug = false;
-                    yield return new WaitUntil(()=>(((Vector2)(this.transform.position - grid.GetCellCenterWorld(currentPos))).magnitude <= .1f));
-                    //debug = true;
-                    Vector3 to = grid.GetCellCenterWorld(currentPos);
-                    to.z = -1;
-                    this.transform.position = to;
-
-                    OnStepOnTile.Invoke(currentPos);
-                }
-            }
-            else
-            {
-                elapsedTime = 0;
-                isLooking = true;
-                yield return null;
-            }
-        }
-    }
-
     private void Update()
     {
+        inputMovement();
+
         if(Input.GetMouseButtonDown(0))
         {
             this.GetComponent<DiggingHandler>().Dig(lookingAtPos);
@@ -108,5 +52,76 @@ public class Player : MonoBehaviour
         Vector3 to = grid.GetCellCenterWorld(currentPos);
         to.z = -1;
         this.transform.position = to;
+    }
+
+    private void inputMovement()
+    {
+        float y = Input.GetAxisRaw("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+
+        if ((((Vector2)(this.transform.position - grid.GetCellCenterWorld(currentPos))).magnitude > .1f)) return;
+        else
+        {
+            Vector3 to = grid.GetCellCenterWorld(currentPos);
+            if ((Vector2)to != (Vector2)this.transform.position)
+            {
+
+                to.z = -1;
+                this.transform.position = to;
+
+                GridCell cell = mapGen.getCell((Vector2Int)currentPos);
+
+                if (cell != null)
+                {
+                    if (cell.OnStepped != null)
+                        cell.OnStepped.Invoke();
+                }
+            }
+        }
+
+        if ((x != 0 || y != 0) && !stopMoving)
+        {
+            if (x != 0 && y != 0) y = 0;
+
+            direction = new Vector3Int(Mathf.CeilToInt(x), Mathf.CeilToInt(y), 0);
+
+            // Player has a delay before actually moving
+            if (isLooking)
+            {
+                elapsedTime += Time.deltaTime;
+                lookingAtPos = currentPos + new Vector3Int(Mathf.CeilToInt(x), Mathf.CeilToInt(y), 0);
+                // After .13f seconds of holding the movement button, player will start moving
+                if (elapsedTime >= .13f)
+                    isLooking = false;
+            }
+
+            // Player is moving
+            else
+            {
+                Vector3Int pos = currentPos + direction;
+                // Used to check on the next block
+                lookingAtPos = pos + direction;
+
+                Vector2 nextPos = grid.GetCellCenterWorld(pos);
+
+                // Used to check if there are any colliders on the next block
+                Collider2D[] col = Physics2D.OverlapBoxAll(nextPos, new Vector2(.1f, .1f), 0);
+                if (col.Length == 0)
+                {
+                    currentPos = pos;
+                }               
+            }
+        }
+        else
+        {
+            elapsedTime = 0;
+            isLooking = true;
+            return;
+        }
+    }
+
+    public void enableMoving(bool enable)
+    {
+        stopMoving = !enable;
     }
 }

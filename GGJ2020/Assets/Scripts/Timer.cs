@@ -12,7 +12,7 @@ using UnityEngine.UI;
     float timeRemaining;
 
     public UnityEvent OnEnd = new UnityEvent();
-    public bool isStart = true;
+    public bool isStart = false;
 
     public void StartTimer()
     {

@@ -10,7 +10,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private Vector2Int GridMinSize;
     [SerializeField] private Vector2Int GridMaxSize;
     [SerializeField] private int mod;
-    public int Level = 0;
+    public int Level = 1;
     public Tilemap tilemap;
     public RandomItemGenerator ItemGen;
     public Timer timer;
@@ -37,9 +37,9 @@ public class MapGenerator : MonoBehaviour
     private void Start()
     {
         DialogueSystem.instance.OnDialogueEnd.RemoveAllListeners();
+
         player = FindObjectOfType<Player>();
-        player.OnStepOnTile.AddListener(CheckIfOnOrb);
-        RegenerateMap();
+        GenerateMap();
 
         if (!GameManager.instance.HasEneterdOnce)
         {
@@ -56,7 +56,6 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
-        Level += 1;
         int index = Level;
         if (index >= gridSizes.Count) index = gridSizes.Count - 1;
         GridSize = gridSizes[index];
@@ -64,11 +63,30 @@ public class MapGenerator : MonoBehaviour
         SpawnTiles();
     }
 
+    private void PlayerGoesUp()
+    {
+        Level += 1;
+        GenerateMap();
+    }
+
+    private void PlayerGoesDown()
+    {
+        Level -= 1;
+        GenerateMap();
+    }
     public void GenerateMap(Vector2Int size)
     {
+        ClearMap();
+        ItemGen.ClearTiles();
         Level += 1;
         GridSize = size;
         SpawnTiles();
+
+        int index = Mathf.Clamp(Mathf.FloorToInt(Random.Range(0, 100f) / 33f), 0, 2);
+        //ItemGen.GenerateItems(percentList[index]);
+        ItemGen.GenerateItems(1, 1, 1);
+        RepositionPlayer();
+        GoalOut = false;
     }
 
     public void SpawnTiles()
@@ -113,17 +131,6 @@ public class MapGenerator : MonoBehaviour
         Orb.GetComponentInChildren<Animator>().Play("Return");
     }
 
-    public void RegenerateMap()
-    {
-        ClearMap();
-        GenerateMap();
-        ItemGen.ClearTiles();
-        int index = Mathf.Clamp(Mathf.FloorToInt(Random.Range(0, 100f) / 33f),0, 2);
-        ItemGen.GenerateItems(percentList[index]);
-        RepositionPlayer();
-        GoalOut = false;
-    }
-
     public void OpenOrb()
     {
         if (GoalOut) return;
@@ -140,13 +147,18 @@ public class MapGenerator : MonoBehaviour
             seq.Append(FadeSystem.instance.Willfade(true, Color.black));
             seq.AppendCallback(()=>
             {
-                RegenerateMap();
+                PlayerGoesUp();
                 RepositionPlayer();
-                player.GetComponent<DiggingHandler>().ResetDugPoints();
+                //player.GetComponent<DiggingHandler>().ResetDugPoints();
             });
             seq.Append(FadeSystem.instance.Willfade(false));
             seq.PlayForward();
         }
+    }
+
+    public void CheckIfonTrap(Vector3Int pos)
+    {
+
     }
 
     public void SetOrbPosition(Vector3Int pos)

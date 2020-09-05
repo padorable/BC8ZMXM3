@@ -30,7 +30,9 @@ public class MenuManager : MonoBehaviour
     {
         AudioSystem.instance.PlaySFX(2);
         Camera mainCam = Camera.main;
-        DOTween.To(() => mainCam.transform.position, x => mainCam.transform.position = x, new Vector3(0, -7,mainCam.transform.position.z), 8.0f);
+
+        // You dont want the moving camera to go on if it the dialogue has been skipped already
+        Tweener tween = DOTween.To(() => mainCam.transform.position, x => mainCam.transform.position = x, new Vector3(0, -7,mainCam.transform.position.z), 8.0f);
         DOTween.To(() => ButtonGroup.alpha, x => ButtonGroup.alpha = x, 0, 1.0f);
         ButtonGroup.blocksRaycasts = false;
 
@@ -38,7 +40,8 @@ public class MenuManager : MonoBehaviour
         seq.AppendInterval(3.0f);
         seq.AppendCallback(() => DialogueSystem.instance.StartDialogue(0));
         seq.PlayForward();
-        DialogueSystem.instance.OnDialogueEnd.AddListener(OnEndDialogue);
+
+        DialogueSystem.instance.OnDialogueEnd.AddListener(() => { OnEndDialogue(); tween.Kill(); });
     }
 
 
@@ -61,7 +64,14 @@ public class MenuManager : MonoBehaviour
         AudioSystem.instance.PlayMusic(3);
         DialogueSystem.instance.StartDialogue(1);
         DialogueSystem.instance.OnDialogueEnd.RemoveAllListeners();
-        DialogueSystem.instance.OnDialogueEnd.AddListener(()=>SceneSystem.instance.FadeToNextScene("RandomGenerator"));
+        //DialogueSystem.instance.OnDialogueEnd.AddListener(()=>SceneSystem.instance.FadeToNextScene("RandomGenerator"));
+        DialogueSystem.instance.OnDialogueEnd.AddListener(() => SceneSystem.instance.FadeToNextScene("Revamped"));
+    }
+
+    public void SetDungeon(DungeonSetting setting)
+    {
+        if (GameManager.instance != null)
+            GameManager.instance.SetDungeonSetting(setting);
     }
 
     private void Start()

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 964798daf934afe41950b586f0a7d083
+  - enabled: 1
+    path: Assets/Scenes/Revamped.unity
+    guid: ee06d2300080e6a4fa16334b9c426fa1
   m_configObjects: {}

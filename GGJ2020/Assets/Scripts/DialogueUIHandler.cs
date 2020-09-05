@@ -161,6 +161,8 @@ public class DialogueUIHandler : MonoBehaviour
     // Call to clear Dialogue Box
     public void ClearDialogue()
     {
+        if (TypingCoroutine != null) StopCoroutine(TypingCoroutine);
+
         DialogueName.text = "";
         DialogueText.text = "";
     }

@@ -14,7 +14,16 @@ public class FadeSystem : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+        else if (instance != this)
+        {
+            Destroy(Cover.transform.parent.gameObject);
+            Destroy(this.gameObject);
+        }
         m_Cover = Cover;
         FadeToColor = Color.black;
 

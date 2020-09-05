@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae6504f2e88bca47a404b89b51ccd66, type: 3}
+  m_Name: New Dungeon Setting
+  m_EditorClassIdentifier: 
+  RuleTileSetting: {fileID: 11400000, guid: 007e8473aa92cd844a4f8a4992dc9f4b, type: 2}
+  DigTile: {fileID: 11400000, guid: 305a9f0954c49cb46aeca59a11d66deb, type: 2}
+  Goal:
+  - Item: 0
+    Amount: 10
+  Floors:
+  - LevelSize: {x: 3, y: 6}
+    OccupyPercent: 50
+    Geod: 10
+    Trap: 0
+    Chakra: 10
+    ItemWeights:
+    - item: 0
+      weight: 90
+    - item: 5
+      weight: 10
+  - LevelSize: {x: 8, y: 6}
+    OccupyPercent: 50
+    Geod: 10
+    Trap: 0
+    Chakra: 10
+    ItemWeights:
+    - item: 0
+      weight: 90
+    - item: 5
+      weight: 10
+  - LevelSize: {x: 10, y: 10}
+    OccupyPercent: 50
+    Geod: 10
+    Trap: 0
+    Chakra: 10
+    ItemWeights:
+    - item: 0
+      weight: 90
+    - item: 5
+      weight: 10

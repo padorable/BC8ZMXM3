@@ -12,6 +12,7 @@ public class RandomItemGenerator : MonoBehaviour
     public TileBase Geod;
     public TileBase Button;
     public TileBase Time;
+    public TileBase Trap;
     MapGenerator mapGen;
 
     private Vector3Int RandPointFromGrid(MapGenerator map)
@@ -26,6 +27,54 @@ public class RandomItemGenerator : MonoBehaviour
         mapGen = FindObjectOfType<MapGenerator>();
     }
 
+    public void GenerateItems(int geodAmount, int timeAmount, int trapAmount)
+    {
+        ItemCoordinates.Clear();
+
+        // Creates a list of all the points available
+        List<Vector3Int> allPoints = new List<Vector3Int>();
+        for(int i = 0; i < mapGen.ActualGridSize.x; i++)
+        {
+            for(int j = 0; j < mapGen.ActualGridSize.y; j++)
+            {
+                allPoints.Add(mapGen.LowerLeft + new Vector3Int(i, j, 0));
+            }
+        }
+        int ran = Random.Range(0, allPoints.Count);
+        // From the lower left of the grid, finds a random point
+        Vector3Int rand = allPoints[ran];
+        mapGen.SetOrbPosition(rand);
+        allPoints.RemoveAt(ran);
+
+        rand = allPoints[ran];
+        itemLayer.SetTile(allPoints[ran], Button);
+        allPoints.RemoveAt(ran);
+
+        for (int i = 0; i < geodAmount; i++)
+        {
+            if(allPoints.Count == 0) { Debug.LogError("GeodAmount too big"); break; }
+            ran = Random.Range(0, allPoints.Count);
+            itemLayer.SetTile(allPoints[ran], Geod);
+            allPoints.RemoveAt(ran);
+        }
+
+        for(int i = 0; i < timeAmount; i++)
+        {
+            if (allPoints.Count == 0) { Debug.LogError("Not enough space for Time items"); break; }
+            ran = Random.Range(0, allPoints.Count);
+            itemLayer.SetTile(allPoints[ran], Time);
+            allPoints.RemoveAt(ran);
+        }
+
+        for(int i = 0; i < trapAmount; i++)
+        {
+            if (allPoints.Count == 0) { Debug.LogError("Not enough space for trap items"); break; }
+            ran = Random.Range(0, allPoints.Count);
+            itemLayer.SetTile(allPoints[ran], Trap);
+            allPoints.RemoveAt(ran);
+        }
+    }
+    /*
     public void GenerateItems(float percent)
     {
         float clampPercent = Mathf.Clamp(percent, 0.001f, 0.49f);
@@ -75,6 +124,7 @@ public class RandomItemGenerator : MonoBehaviour
             }
         }
     }
+    */
 
     // Tile Checker
     public int CheckTile(Vector3Int pos)
@@ -82,6 +132,7 @@ public class RandomItemGenerator : MonoBehaviour
         if (itemLayer.GetTile(pos) == Geod) return 1;
         else if (itemLayer.GetTile(pos) == Button) return 2;
         else if (itemLayer.GetTile(pos) == Time) return 3;
+        else if (itemLayer.GetTile(pos) == Trap) return 4; 
             return 0;
     }
 

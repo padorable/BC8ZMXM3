@@ -25,10 +25,12 @@ public class DialogueSystem : MonoBehaviour
 
     private void Update()
     {
-        if (!Input.GetMouseButtonDown(0))
-            return;
-
         if (!StartedDialogue) return;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            OnDialogueDone();
+
+        if (!Input.GetMouseButtonDown(0))   return;
 
         if (UIHandler.IsTyping)
         {
@@ -92,16 +94,7 @@ public class DialogueSystem : MonoBehaviour
         // if the current dialogue is on its last line, remove all dialogue components
         if(CurrentSequence.IsDone)
         {
-            if (WillRemoveImagesOnEnd)
-            {
-                UIHandler.HideUIObject(UIHandler.ImageLeft);
-                UIHandler.HideUIObject(UIHandler.ImageRight);
-            }
-            UIHandler.HideUIObject(UIHandler.DialogeBox);
-            UIHandler.ClearDialogue();
-            StartedDialogue = false;
-            UIHandler.UpdateBackGround(null);
-            OnDialogueEnd.Invoke();
+            OnDialogueDone();
             // End of Dialogue
         }
         else
@@ -124,5 +117,19 @@ public class DialogueSystem : MonoBehaviour
     {
         UIHandler.HideUIObject(UIHandler.ImageLeft);
         UIHandler.HideUIObject(UIHandler.ImageRight);
+    }
+
+    private void OnDialogueDone()
+    {
+        if (WillRemoveImagesOnEnd)
+        {
+            UIHandler.HideUIObject(UIHandler.ImageLeft);
+            UIHandler.HideUIObject(UIHandler.ImageRight);
+        }
+        UIHandler.HideUIObject(UIHandler.DialogeBox);
+        UIHandler.ClearDialogue();
+        StartedDialogue = false;
+        UIHandler.UpdateBackGround(null);
+        OnDialogueEnd.Invoke();
     }
 }
